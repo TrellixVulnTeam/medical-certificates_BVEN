@@ -1,0 +1,65 @@
+<%- include ('navbar'); %>
+
+  <section class="section">
+    <table class="table cell-border compact stripe hover" id="patients-table">
+        <thead>
+          <tr>
+            <th><abbr title="id">id</abbr></th>
+            <th><abbr title="firstName">first name</abbr></th>
+            <th><abbr title="lastName">Last name</abbr></th>
+            <th><abbr title="email">email</abbr></th>
+            <th><abbr title="birthDate">date of birth</abbr></th>
+            <th><abbr title="employer">Employer</abbr></th>
+            <th><abbr title="jobDescription">position</abbr></th>
+            <th><abbr title="additionalDetails">Additional info</abbr></th>
+            <th><abbr title="createdAt">created at</abbr></th>
+            <th><abbr title="updatedAt">Updated at</abbr></th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+        </tbody>
+      </table>    
+
+    
+
+
+
+  </section>
+
+  <%- include ('footer'); %>
+
+
+  <script>
+
+    $(document).ready( function () {
+
+        $('#patients-table').DataTable({
+            paging: true,
+            ordering: true,
+            select: true,
+
+            ajax: {
+                url: '/patient/get-all',
+                
+            },
+            columns: [
+            { data: 'id' },
+            { data: 'firstName' },
+            { data: 'lastName' },
+            { data: 'email'},
+            { data: 'birthDate'},
+            { data: 'employer'},
+            { data: 'jobDescription'},
+            { data: 'additionalDetails'},
+            { data: 'createdAt'},
+            { data: 'updatedAt'}
+            ],
+            columnDefs: [{
+                "defaultContent": "-",
+                "targets": "_all"
+            }]
+        });
+    } );
+  </script>

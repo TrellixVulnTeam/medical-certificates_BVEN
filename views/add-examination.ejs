@@ -1,0 +1,62 @@
+<%- include ('navbar') %>
+<div class ='columns' style="padding-left: 1em;"">
+    <div class="column is-half">
+        <form action = '/patient/add-new/' method="post" >
+            <div class="field">
+                <label class="label">Examination name</label>
+                <div class="control">
+                <input class="input" type="text" name='name' placeholder="e.g Eye test">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Description</label>
+                <div class="control">
+                <input class="input" type="text" name='description'">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Date and time</label>
+                <div class="control">
+                <input class="input" type="datetime" name='dateAndTime' ">
+                </div>
+            </div>
+
+            
+            <div class="field">
+                <label class="label">Duration</label>
+                <div class="control">
+                <input class="input" type="email" placeholder="15 minutes">
+                </div>
+            </div>
+
+
+            <div class="field">
+                <label class="label">Patient</label>
+                <div class="control">
+                <input class="input" type="text" name='patient' placeholder="Siemens">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Additional details</label>
+                <div class="control">
+                <textarea class="input" type="text" name='additionalDetails'></textarea>
+                </div>
+            </div>
+
+
+            <div class="field is-grouped">
+                <div class="control">
+                <button class="button is-link" type="submit">Submit</button>
+                </div>
+                <div class="control">
+                <button class="button is-link is-light">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+  <%- include ('footer'); %>
